@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    function guessARiddle(riddlesAnswers = [], attemptCount){
+        var attempt = 1;
+    
+        if(riddlesAnswers.length != 0){
+
+            outerloop:
+            while (attempt <= attemptCount){
+
+                var userAnswer = prompt("Отгадайте загадку:!\n \"" + riddlesAnswers[0][0] + "\"");
+
+                for(var i = 0; i < riddlesAnswers[0][1].length; i++){
+                    if (userAnswer.toLowerCase() == riddlesAnswers[0][1][i]){
+                        alert("Вы угадали!")
+                        trueCountAnswers++
+                        riddlesAnswers.splice(0,1);
+                        guessARiddle(riddlesAnswers, attemptCount);
+                        break outerloop;
+                    }
+                }
+                alert("Не верно! У вас осталось " + (attemptCount - attempt++) + " попыток")
+            }
+        } else {
+            alert("Загадки закончились! Вы угадали " + trueCountAnswers + " загадок");
+        }
+        
+        if(attempt > attemptCount){
+            alert("Попыток больше нет. Переходим к следующей загадке");
+            riddlesAnswers.splice(0,1);
+            guessARiddle(riddlesAnswers, attemptCount);
+        }
+    }
+
+    var trueCountAnswers = 0;
+    var riddlesAnswers = [[["Зимой и летом одним цветом"], ["ёлка", "елка", "доллар"]],
+                        [["Висит груша, нельзя скушать"], ["лампочка", "боксёрская груша", "программа \"груша\""]],
+                        [["Не лает, не кусает, в дом не пускает"],["замок", "охранник", "чоп"]],
+                        [["Кто на своей голове лес носит?"], ["олень", "алень", "инокентий"]]];
+
+    guessARiddle(riddlesAnswers, attemptCount = 3);
+
+</script>

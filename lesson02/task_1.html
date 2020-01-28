@@ -1,0 +1,92 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var trueCountAnswers = 0;
+//1 загадка
+    var answer = "ёлка";
+    var answer2 = "елка";
+    var answer3 = "доллар";
+    var attempt = 1;
+    var attemptCount = 3;
+
+    while (attempt <= attemptCount){
+        var userAnswer = prompt("Отгадайте загадку с " + attemptCount + " попыток!\n \"Зимой и летом одним цветом\"");
+        if ((userAnswer.toLowerCase() == answer) || (userAnswer.toLowerCase() == answer2) || (userAnswer.toLowerCase() == answer3)){
+            alert("Вы угадали!")
+            trueCountAnswers++
+            break;
+        }
+        alert("Не верно! У вас осталось " + (attemptCount - attempt) + " попыток")
+        attempt++;
+    }
+
+    if(attempt > attemptCount){
+        alert("Попыток больше нет. Переходим к следующей загадке");
+    }
+//2 загадка
+    var answer = "лампочка";
+    var answer2 = "боксёрская груша";
+    var answer3 = "программа \"груша\"";
+    var attempt = 1;
+    var attemptCount = 3;
+
+    while (attempt <= attemptCount){
+        var userAnswer = prompt("Отгадайте загадку с " + attemptCount + " попыток!\n \"Висит груша, нельзя скушать\"");
+        if ((userAnswer.toLowerCase() == answer) || (userAnswer.toLowerCase() == answer2) || (userAnswer.toLowerCase() == answer3)){
+            alert("Вы угадали!")
+            trueCountAnswers++
+            break;
+        }
+        alert("Не верно! У вас осталось " + (attemptCount - attempt) + " попыток")
+        attempt++;
+    }
+
+    if(attempt > attemptCount){
+        alert("Попыток больше нет. Переходим к следующей загадке");
+    }
+//3 загадка
+    var answer = "замок";
+    var answer2 = "охранник";
+    var answer3 = "чоп";
+    var attempt = 1;
+    var attemptCount = 3;
+
+    while (attempt <= attemptCount){
+        var userAnswer = prompt("Отгадайте загадку с " + attemptCount + " попыток!\n \"Не лает, не кусает, в дом не пускает\"");
+        if ((userAnswer.toLowerCase() == answer) || (userAnswer.toLowerCase() == answer2) || (userAnswer.toLowerCase() == answer3)){
+            alert("Вы угадали!")
+            trueCountAnswers++
+            break;
+        }
+        alert("Не верно! У вас осталось " + (attemptCount - attempt) + " попыток")
+        attempt++;
+    }
+
+    if(attempt > attemptCount){
+        alert("Попыток больше нет. Переходим к следующей загадке");
+    }
+//4 загадка
+    var answer = "олень";
+    var answer2 = "алень";
+    var answer3 = "инокентий";
+    var attempt = 1;
+    var attemptCount = 3;
+
+    while (attempt <= attemptCount){
+        var userAnswer = prompt("Отгадайте загадку с " + attemptCount + " попыток!\n \"Кто на своей голове лес носит?\"");
+        if ((userAnswer.toLowerCase() == answer) || (userAnswer.toLowerCase() == answer2) || (userAnswer.toLowerCase() == answer3)){
+            alert("Вы угадали!")
+            trueCountAnswers++
+            break;
+        }
+        alert("Не верно! У вас осталось " + (attemptCount - attempt) + " попыток")
+        attempt++;
+    }
+
+    if(attempt > attemptCount){
+        alert("Попыток больше нет");
+    }
+
+    alert("Загадки закончились! Вы угадали " + trueCountAnswers + " загадок");
+
+</script>

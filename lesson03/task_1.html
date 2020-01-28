@@ -1,0 +1,81 @@
+<meta charset="utf-8">
+<script text="text/javascript">
+//a, воспользовался рекурсией для закрепления материала
+    function arrPush(n, arr, i){
+        if(i <= n){
+            arr.push(i);
+            i++;
+            arrPush(n, arr, i);
+        }
+    }
+
+    function sequenceOfNumbers(n) {
+        var arr = [];
+        var i = 1;
+        arrPush(n, arr, i);
+        return arr;
+    }
+
+    arr = sequenceOfNumbers(+prompt("Сколько чисел поместить в массив?"));
+    document.write("a. Массив: ["  + arr + "]" + "<br><br>");
+
+//b
+    function sumOfNumbers(arr = []){
+        var sum = 0;
+        for(var i = 0; i < arr.length; i++){
+            sum += arr[i];
+        }
+        return sum;
+    }
+
+    document.write("b. Сумма чисел массива: " + sumOfNumbers(arr) + "<br><br>");
+
+//c
+    function truncArr(arr = []){
+        var truncArr = [];
+        for(var i = 0; i < arr.length; i++){
+            truncArr.push(Math.trunc(arr[i]));
+        }
+        return truncArr;
+    }
+
+    function maxOfNumbers(arr = []){
+        var max = arr[0];
+        for(var i = 1; i < arr.length; i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    document.write("c. Максимально число: " + maxOfNumbers(truncArr(arr)) + "<br><br>");
+
+//d
+    function minOfNumbers(arr = []){
+        var min = arr[0];
+        for(var i = 1; i < arr.length; i++){
+            if(min > arr[i]){
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+
+    document.write("d. Минимальное число: " + minOfNumbers(truncArr(arr)) + "<br><br>");
+
+//e
+    function evenNumbers(arr = []){
+        var evenNumbers = [];
+        for(var i = 0; i < arr.length; i++){
+            if((arr[i] % 2) == 0){
+                evenNumbers.push(arr[i]);
+            }
+        }
+        return evenNumbers;
+    }
+
+    document.write("e. Чётные числа: [" + evenNumbers(truncArr(arr))  + "]" + "<br><br>");
+
+</script>
+    

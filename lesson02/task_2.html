@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+
+    var userDeposit = +prompt("Введите сумму вклада");
+    var percent = +prompt("Введите %");
+    var years = 5;
+
+    var percentScore = 0;
+    var userScore = 0;
+
+    document.write("При вкладе " + userDeposit + " под " + percent + " процентов, на срок " + years + " лет:<br>")
+
+    for(var i = 1; i <= years; i++){
+
+        percentScore = userDeposit / 100 * percent;
+        userDeposit += percentScore;
+
+        document.write("За " + i + " год будет начислено " + percentScore + 
+        ", суммарно размер Вашего счёта будет равен " + userDeposit + "<br>")
+    }
+
+</script>
